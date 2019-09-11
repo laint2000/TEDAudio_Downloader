@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TedAudio_Downloader", "Mp3Downloader\TedAudio_Downloader.csproj", "{9B3ACB9E-0B7F-4EA2-90C8-503E2940CC52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{5559B9C1-444E-45D2-AC98-A70C3A0BF0B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B3ACB9E-0B7F-4EA2-90C8-503E2940CC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3ACB9E-0B7F-4EA2-90C8-503E2940CC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3ACB9E-0B7F-4EA2-90C8-503E2940CC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3ACB9E-0B7F-4EA2-90C8-503E2940CC52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5559B9C1-444E-45D2-AC98-A70C3A0BF0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5559B9C1-444E-45D2-AC98-A70C3A0BF0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5559B9C1-444E-45D2-AC98-A70C3A0BF0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5559B9C1-444E-45D2-AC98-A70C3A0BF0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC5207CF-E368-40BA-A693-9C017A3B719E}
+	EndGlobalSection
+EndGlobal

@@ -20,7 +20,7 @@ namespace ProgramTests.Code.Tests
         public void GetStringListTest()
         {
             //act
-            var items = _fileReaderWriter.GetStringList(Const.FileMp3MusicList);
+            var items = _fileReaderWriter.GetStringList(Const.FileMp3_DownloadedMusicList);
 
             //assert
             Assert.AreEqual(20, items.Count, "items.count is invalid");

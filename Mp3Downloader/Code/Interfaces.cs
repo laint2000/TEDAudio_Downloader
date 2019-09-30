@@ -8,14 +8,14 @@ namespace Mp3Downloader.Code
     public interface IHttpConnectror
     {
         event Action<string> OnLoadStringComplete;
-        event Action<string, Stream> OnLoadStreamComplete;
+        event Action<string, string, Stream> OnLoadStreamComplete;
         string LoadString(string url);
-        Stream LoadStream(string url);
+        Stream LoadStream(string name, string url);
     }
 
     public interface IHtmlParser
     {
-        List<WebItemDTO> GetItems(string htmlText);
+        IEnumerable<WebItemDTO> GetItems(string htmlText);
     }
 
     public interface IMp3FilesAdapter

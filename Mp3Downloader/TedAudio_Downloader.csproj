@@ -75,7 +75,7 @@
     <Compile Include="Code\FilesWriterReader.cs" />
     <Compile Include="Code\HttpConnector.cs" />
     <Compile Include="Code\Interfaces.cs" />
-    <Compile Include="Code\Mfm20Parser.cs" />
+    <Compile Include="Code\HtmlParser.cs" />
     <Compile Include="Code\Mp3FilesAdapter.cs" />
     <Compile Include="Code\UrlUtils.cs" />
     <Compile Include="DTO\WebItemDTO.cs" />

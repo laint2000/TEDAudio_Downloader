@@ -16,7 +16,7 @@ namespace Mp3Downloader.Code
         private const string MusicListName = "DownloadedFiles.txt";
         private int _fileCounter;
 
-        public const int MaxDownloadedItemsLog = 1000;
+        public const int MaxDownloadedItemsLog = 2000;
         public List<string> ExistedFiles { get; private set; }
         public Mp3FilesAdapter(IFilesWriterReader filesWriterReader)
         {
@@ -54,7 +54,7 @@ namespace Mp3Downloader.Code
         public bool SaveToFile(string fileName, Stream stream)
         {
             _fileCounter++;
-            var fileNameToSave = $"{_fileCounter:D4} {fileName}";
+            var fileNameToSave = $"{_fileCounter:D4} {fileName}.mp3";
             _filesWriterReader.SaveToFile(Mp3Folder, fileNameToSave, stream);
             AddToDownloadedFileList(fileName);
             return true;

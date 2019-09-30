@@ -16,5 +16,7 @@ namespace Mp3Downloader.DTO
             Name = name;
             Url = url;
         }
+
+        public WebItemDTO() : this("", "") { }
     }
 }

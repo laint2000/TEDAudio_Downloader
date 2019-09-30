@@ -45,7 +45,7 @@ namespace Mp3Downloader
             }
 
             var textToShow = string.Join("\r\n", _downloader.NewFilesList);
-            txtConsole.AppendText($"New files to download \r\n{textToShow}\r\n");
+            txtConsole.AppendText($"{textToShow}\r\n");
         }
 
         private void downloader_OnDownloadMusicFile(string url, bool isSuccesfull, string errorMsg)

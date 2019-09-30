@@ -39,13 +39,13 @@ namespace Mp3Downloader.Code
             _mp3FilesAdapter = mptFilesAdapter;
         }
 
-        private void HttpConnectror_OnMp3DownloadComplete(string url, Stream mp3Stream)
+        private void HttpConnectror_OnMp3DownloadComplete(string name, string url, Stream mp3Stream)
         {
-            var fileName = url.UrlFileNameOnly();
+            var fileName = name;
 
             _mp3FilesAdapter.SaveToFile(fileName, mp3Stream);
 
-            OnDownloadMusicFile(url, ResultSuccesfull, "");            
+            OnDownloadMusicFile(name, ResultSuccesfull, "");            
         }
 
         public void GetNewSongsList()
@@ -68,9 +68,9 @@ namespace Mp3Downloader.Code
             try
             {
                 var list = _htmlParser.GetItems(htmlText);
+                var orderedList = list.Reverse();
 
-                var hash = new HashSet<string>(_mp3FilesAdapter.ExistedFiles);
-                var newSongs = list.Where(q => !hash.Contains(q.Name)).ToList();
+                var newSongs = SelectNewSongsOnly(orderedList);
 
                 NewSongsList.AddRange(newSongs);
             }
@@ -80,6 +80,15 @@ namespace Mp3Downloader.Code
             }
 
             OnNewSongsListGet(ResultSuccesfull, "");
+        }
+
+        private List<WebItemDTO> SelectNewSongsOnly(IEnumerable<WebItemDTO> orderedList)
+        {
+            var existedFiles = _mp3FilesAdapter.ExistedFiles.Select(r => r.ToLower());
+            var hash = new HashSet<string>(existedFiles);
+            var result = orderedList.Where(q => !hash.Contains(q.Name.ToLower())).ToList();
+
+            return result;
         }
 
         public void DownloadAllMp3()
@@ -98,7 +107,7 @@ namespace Mp3Downloader.Code
             {
                 try
                 {
-                    _httpConnectror.LoadStream(item.Url);
+                    _httpConnectror.LoadStream(item.Name, item.Url);
                 }
                 catch (Exception e)
                 {

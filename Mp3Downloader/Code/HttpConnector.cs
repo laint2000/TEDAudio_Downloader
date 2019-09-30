@@ -7,7 +7,7 @@ namespace Mp3Downloader.Code
     public class HttpConnector : IHttpConnectror
     {
         public event Action<string> OnLoadStringComplete = delegate { };
-        public event Action<string, Stream> OnLoadStreamComplete = delegate { };
+        public event Action<string, string, Stream> OnLoadStreamComplete = delegate { };
 
         public string LoadString(string url)
         {
@@ -20,13 +20,13 @@ namespace Mp3Downloader.Code
             return responseString;
         }
 
-        public Stream LoadStream(string url)
+        public Stream LoadStream(string name, string url)
         {
             var request = CreateRequest(url);
             var response = (HttpWebResponse)request.GetResponse();
             var resultStream = response.GetResponseStream();
 
-            OnLoadStreamComplete(url, resultStream);
+            OnLoadStreamComplete(name, url, resultStream);
             return resultStream;
         }
 

@@ -2,9 +2,11 @@
 {
     internal class Const
     {
-        private const string TestDataFolder = @"../../TestDataFiles";
+        public const string FolderTestData = @"../../TestDataFiles";
+        public const string FolderExpected = @"../../Expected";
+        public const string FolderFailed = @"../../Failed";
 
-        public const string FileHtmlTop20Page = TestDataFolder + @"/TedPodcast_Site.html";
-        public const string FileMp3MusicList = TestDataFolder + @"/DownloadedFiles.txt";
+        public const string FileHtml_SiteMainPage = FolderTestData + @"/TedPodcast_Site.html";
+        public const string FileMp3_DownloadedMusicList = FolderTestData + @"/DownloadedFiles.txt";
     }
 }

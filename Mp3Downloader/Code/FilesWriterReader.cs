@@ -39,6 +39,8 @@ namespace Mp3Downloader.Code
 
         public List<string> GetMp3FilesList(string mp3Folder)
         {
+            //create directory if not exists
+            Directory.CreateDirectory(mp3Folder);
             var filesList =  Directory.GetFiles(mp3Folder, "*.mp3").ToList();
             
             return filesList.Select(r => Path.GetFileName(r)).ToList();

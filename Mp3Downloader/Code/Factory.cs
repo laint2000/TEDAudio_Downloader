@@ -8,7 +8,7 @@ namespace Mp3Downloader.Code
         public static Downloader CreateDownloader()
         {
             var httpConnector = new HttpConnector();
-            var htmlParser = new Mfm20Parser();
+            var htmlParser = new HtmlParser();
             var filesWriterReader = new FilesWriterReader();
             var mp3FilesAdapter = new Mp3FilesAdapter(filesWriterReader);
             
@@ -19,7 +19,7 @@ namespace Mp3Downloader.Code
         public static Downloader CreateTestDownloader()
         {
             var httpConnector = new HttpTestConnector();
-            var htmlParser = new Mfm20Parser();
+            var htmlParser = new HtmlParser();
 
             var filesWriterReader = new FilesWriterReader();
             var mp3FilesAdapter = new Mp3FilesAdapter(filesWriterReader);
@@ -31,7 +31,7 @@ namespace Mp3Downloader.Code
         {
             var httpConnector = new HttpFakeConnectorDownloadStreamError();
             //var httpConnector = new HttpFakeConnectorConnectionErrors();
-            var htmlParser = new Mfm20Parser();
+            var htmlParser = new HtmlParser();
 
             var filesWriterReader = new FilesWriterReader();
             var mp3FilesAdapter = new Mp3FilesAdapter(filesWriterReader);

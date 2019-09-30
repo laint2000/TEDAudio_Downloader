@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using Moq;
-using Mp3Downloader.Code;
 using ProgramTests.Code.Fakes;
 using Mp3Downloader.DTO;
+using Mp3Downloader.Code;
 
 namespace ProgramTests.Code.Tests
 {
@@ -21,16 +21,16 @@ namespace ProgramTests.Code.Tests
         {
             _existingMp3 = new List<string>()
             {
-                "Music_00.mp3",
-                "Music_01.mp3"
+                "Music Name 00",
+                "Music Name 01"
             };
 
             _downloadedItems = new List<WebItemDTO>()
             {
-                new WebItemDTO("Music Name 00", "http://mfm.ua/Music_00.mp3"),
-                new WebItemDTO("Music Name 01", "http://mfm.ua/Music_01.mp3"),
+                new WebItemDTO("Music Name 03", "http://mfm.ua/Music_03.mp3"),
                 new WebItemDTO("Music Name 02", "http://mfm.ua/Music_02.mp3"),
-                new WebItemDTO("Music Name 03", "http://mfm.ua/Music_03.mp3")
+                new WebItemDTO("Music Name 01", "http://mfm.ua/Music_01.mp3"),
+                new WebItemDTO("Music Name 00", "http://mfm.ua/Music_00.mp3"),
             };
 
             var fakeConnector = new FakeHttpConnector();
@@ -53,8 +53,8 @@ namespace ProgramTests.Code.Tests
             
             //assert
             Assert.AreEqual(2, _downloader.NewFilesList.Count, "Invalid count value");
-            Assert.AreEqual("Music_02.mp3", _downloader.NewFilesList[0], "Invalid value 0");
-            Assert.AreEqual("Music_03.mp3", _downloader.NewFilesList[1], "Invalid value 1");
+            Assert.AreEqual("Music Name 02", _downloader.NewFilesList[0], "Invalid value 0");
+            Assert.AreEqual("Music Name 03", _downloader.NewFilesList[1], "Invalid value 1");
         }
     }
 }

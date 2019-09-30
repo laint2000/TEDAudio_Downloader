@@ -66,14 +66,14 @@ namespace ProgramTests.Code.Tests
         public void InitializeFileCounter()
         {
             //arrange
-            var fileName = "SomeFileName.mp3";
+            var fileName = "SomeFileName";
 
             //act
             var stream = new MemoryStream();
             _mp3FileAdapter.SaveToFile(fileName, stream);
 
             //assert
-            var expectedFileName = $"0102 {fileName}";
+            var expectedFileName = $"0102 {fileName}.mp3";
             _filesWriterReader.Verify(x => x.SaveToFile("mp3", expectedFileName, stream), Times.Once);
 
         }

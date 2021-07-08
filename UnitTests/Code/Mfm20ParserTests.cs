@@ -28,7 +28,7 @@ namespace ProgramTests.Code.Tests
 
             var expectedFileName = $"{Const.FolderExpected}/section.html";
             var failedFileName = $"{Const.FolderFailed}/section_failed.html";
-            File.Delete(failedFileName);
+            if(File.Exists(failedFileName)) File.Delete(failedFileName);
             
             //act
             var items = _paser.GetSectionsList(strHtml);
